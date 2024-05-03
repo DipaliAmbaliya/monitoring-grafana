@@ -42,6 +42,12 @@ public class ProductController {
         return productService.findById(theproductId).get();
     }
 
+    @GetMapping("/single-product-name/{theproductId}")
+    public String getSingleproductname(@PathVariable int theproductId) {
+        productService.findById(theproductId).get();
+        return productService.findById(theproductId).get().getPname();
+    }
+
 
     @DeleteMapping("/delete/{theproductId}")
     public String deleteProductById(@PathVariable int theproductId) {
